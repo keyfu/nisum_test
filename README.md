@@ -5,6 +5,11 @@
 https://github.com/keyfu/nisum_test.git
 
 # Run project
+1 - You must have maven and a java version installed
+
+2 - Run in your terminal the commands ```mvn package```, ```mvn install``` and ```java -jar target/nisum_test-0.0.1-SNAPSHOT.jar``` in this order.
+
+Or
 1 - Install Spring Tool Suite 4
 
 2 - Open the project, File -> Open Projects from File System ..
