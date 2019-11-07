@@ -6,6 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+
+import org.springframework.format.annotation.NumberFormat;
+
+import com.example.validators.OnlyLetterConstraint;
 
 @Entity
 @Table(name = "persona")
@@ -15,8 +20,10 @@ public class PersonaInfo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@OnlyLetterConstraint
 	@Column(name = "name")
 	private String name;
+	
 	
 	@Column(name = "last_name")
 	private String last_name;

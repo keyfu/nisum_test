@@ -46,6 +46,7 @@ public class PersonaInfoServiceImpl implements IPersonaInfoService {
 	public PersonaInfo getPersonById(Long id) {
 		
 		return personaInfoRepository.findById(id).get();
+	
 	}
 
 }
