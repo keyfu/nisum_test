@@ -15,7 +15,7 @@ public class OnlyLetterValidator implements
       ConstraintValidatorContext cxt) {
         for ( int i=0; i<onlyLetterField.length(); i++ ) {
         	char c = onlyLetterField.charAt (i);
-        	if ( (c < 'a' ||  c > 'z') && (c < 'A' ||  c > 'Z') ) {
+        	if ( (c < 'a' ||  c > 'z') && (c < 'A' ||  c > 'Z') && c != ' ' ) {
         		return false;
         	}
         }

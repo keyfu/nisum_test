@@ -10,6 +10,7 @@ import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.NumberFormat;
 
+import com.example.validators.HairColourConstraint;
 import com.example.validators.OnlyLetterConstraint;
 
 @Entity
@@ -24,22 +25,24 @@ public class PersonaInfo {
 	@Column(name = "name")
 	private String name;
 	
-	
+	@OnlyLetterConstraint
 	@Column(name = "last_name")
 	private String last_name;
 	
 	@Column(name = "address")
 	private String address;
 	
+	@Pattern(regexp = "[0-9]+", message = "Ivalid Number")
 	@Column(name = "simple_phone_number")
-	private Long simple_phone_number;
+	private String simple_phone_number;
 	
+	@HairColourConstraint
 	@Column(name = "hair_colour")
 	private String hair_colour;
 
 	public PersonaInfo() {}
 
-	public PersonaInfo(Long id, String name, String last_name, String address, Long simple_phone_number,
+	public PersonaInfo(Long id, String name, String last_name, String address, String simple_phone_number,
 			String hair_colour) {
 		this.id = id;
 		this.name = name;
@@ -81,11 +84,11 @@ public class PersonaInfo {
 		this.address = address;
 	}
 
-	public Long getSimple_phone_number() {
+	public String getSimple_phone_number() {
 		return simple_phone_number;
 	}
 
-	public void setSimple_phone_number(Long simple_phone_number) {
+	public void setSimple_phone_number(String simple_phone_number) {
 		this.simple_phone_number = simple_phone_number;
 	}
 

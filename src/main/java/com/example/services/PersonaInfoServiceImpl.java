@@ -1,6 +1,7 @@
 package com.example.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +38,7 @@ public class PersonaInfoServiceImpl implements IPersonaInfoService {
 
 	@Override
 	public void deletePersonaInfo(Long id) {
-
+		
 		personaInfoRepository.deleteById(id);
 		
 	}
@@ -45,8 +46,13 @@ public class PersonaInfoServiceImpl implements IPersonaInfoService {
 	@Override
 	public PersonaInfo getPersonById(Long id) {
 		
-		return personaInfoRepository.findById(id).get();
-	
+		Optional<PersonaInfo> personaInfo = personaInfoRepository.findById(id);
+		
+		if ( !personaInfo.isPresent() ) {
+			return null;
+		}
+		
+		return personaInfo.get();
 	}
 
 }
