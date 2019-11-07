@@ -1,5 +1,9 @@
 # NISUM_TEST
 
+# Download project from github
+
+https://github.com/keyfu/nisum_test.git
+
 # Run project
 1 - Install Spring Tool Suite 4
 
